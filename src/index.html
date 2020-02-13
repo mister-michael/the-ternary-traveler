@@ -12,11 +12,21 @@
 
   <section id="entryField">
 
-    <input type="hidden" id="entryId" value="" />
+    <input type="hidden" id="hiddenId" value="" />
 
     <fieldset>
       <label id="nameInput" for="poiName">Where are your interests pointing?</label>
       <input type="text" name="poiName" id="poiName" />
+    </fieldset>
+
+    <fieldset>
+      <label for="placeInput">Where in the world, Carmen?</label>
+      <select id="poiPlace">
+        <option value="">select</option>
+        <option value="1">Italia</option>
+        <option value="2">Swaziland</option>
+        <option value="3">Francophile Island</option>
+      </select>
     </fieldset>
 
     <fieldset>
@@ -28,16 +38,12 @@
       <label id="costInput" for="poiCost">Gimme Your Wallet:</label>
       <input type="text" name="poiCost" id="poiCost" />
     </fieldset>
-
+    
     <fieldset>
-      <label for="place">Where in the world, Carmen?</label>
-      <select id="place">
-        <option value="">select</option>
-        <option value="1">Italia</option>
-        <option value="2">Swaziland</option>
-        <option value="3">Francophile Island</option>
-      </select>
+      <label id="reviewInput" for="poiReview"></label>
+      <input type="hidden" name="poiReview" id="poiReview" />
     </fieldset>
+
 
     <fieldset>
       <button type="button" id="submit--button">Don't You Dare</button>

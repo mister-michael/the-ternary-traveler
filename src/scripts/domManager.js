@@ -1,8 +1,14 @@
+const renderDomComponent = (entries) => {
+  const targetLocation = document.getElementById("printLocation");
+
+
+  entries.forEach(entry => targetLocation.innerHTML += htmlFactory(entry))
+  
+}
+
 const htmlFactory = (entry) => {
 
-  const domComponent =
-    `
-  <article>
+  return `<article>
       <div id="nameDom">${entry.name}</div>
       <div id="placeDom">${entry.place.name}</div>
       <div id="descriptionDom">${entry.description}</div>
@@ -12,10 +18,6 @@ const htmlFactory = (entry) => {
       </section>
     </article>
     `
-  const renderDomComponent = (entry) => {
-    const targetLocation = document.getElementById("printLocation");
+};
 
-    targetLocation.innerHTML += domComponent
-
-  }
-}
+export default renderDomComponent

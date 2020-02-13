@@ -1,26 +1,28 @@
 {
   "places": [
-    { 
-      "id": 1, 
-      "name": "Italy", 
-      "visa_required": false 
+    {
+      "id": 1,
+      "name": "Italy",
+      "visa_required": false
     },
-    { 
-      "id": 2, 
-      "name": "Switzerland", 
-      "visa_required": true 
+    {
+      "id": 2,
+      "name": "Switzerland",
+      "visa_required": true
     },
-    { 
-      "id": 3, 
-      "name": "France", 
+    {
+      "id": 3,
+      "name": "France",
       "visa_required": false
     }
   ],
   "interests": [
-    { "id": 1, 
-      "placeId": 1, 
-      "name": "Local Market", 
-      "description": "Local market where you can purchase local products and try the local food", 
-      "cost": 0.00, "review": "You can definitely get things for a lower price if you are willing to bargain!" }
+    {
+      "placeId": 2,
+      "name": "Tapas Bar",
+      "description": "there are tons of small plates with food and you dont feel like youre getting fat but you are and youre drunk with swiss hemingway",
+      "cost": 500,
+      "id": 2
+    }
   ]
 }

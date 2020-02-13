@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <section id="entryField">
+
+    <input type="hidden" id="hiddenId" value="" />
+
+    <fieldset>
+      <label id="nameInput" for="poiName">Where are your interests pointing?</label>
+      <input type="text" name="poiName" id="poiName" />
+    </fieldset>
+
+    <fieldset>
+      <label for="placeInput">Where in the world, Carmen?</label>
+      <select id="poiPlace">
+        <option value="">select</option>
+        <option value="1">Italia</option>
+        <option value="2">Swaziland</option>
+        <option value="3">Francophile Island</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <label id="descriptionInput" for="poiDescription">Tell Me About It:</label>
+      <input type="text" name="poiDescription" id="poiDescription" />
+    </fieldset>
+
+    <fieldset>
+      <label id="costInput" for="poiCost">Gimme Your Wallet:</label>
+      <input type="text" name="poiCost" id="poiCost" />
+    </fieldset>
+    
+    <fieldset>
+      <label id="reviewInput" for="poiReview"></label>
+      <input type="hidden" name="poiReview" id="poiReview" />
+    </fieldset>
+
+
+    <fieldset>
+      <button type="button" id="submit--button">Don't You Dare</button>
+    </fieldset>
+
+    <section id="printLocation">
+
+    </section>
+
+    <script type="module" src="./scripts/api.js"></script>
+    <script type="module" src="./scripts/domManager.js"></script>
+    <script type="module" src="./scripts/eventListener.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>

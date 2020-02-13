@@ -18,19 +18,20 @@
   ],
   "interests": [
     {
+      "placeId": 3,
+      "name": "Tapas Bar",
+      "description": "there are tons of small plates with food and you dont feel like youre getting fat but you are and youre drunk with swiss hemingway",
+      "cost": 432,
+      "review": "no review yet",
+      "id": 5
+    },
+    {
       "placeId": 2,
       "name": "Tapas Bar",
       "description": "there are tons of small plates with food and you dont feel like youre getting fat but you are and youre drunk with swiss hemingway",
-      "cost": 700,
-      "review": "this place is the bees feets",
-      "id": 2
-    },
-    {
-      "placeId": 1,
-      "name": "Bull Fight",
-      "description": "hemingway's famous book about going to bull fights in italia made me want to go here",
-      "cost": 600,
-      "id": 3
+      "cost": 1111,
+      "review": "no review yet",
+      "id": 6
     }
   ]
 }

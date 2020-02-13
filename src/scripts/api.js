@@ -28,6 +28,11 @@ const API = {
       },
       body: JSON.stringify(entry)
     })
+  },
+  deleteEntry(buttonId) {
+    return fetch(`${interestUrl}/${buttonId}`, {
+      method: "DELETE"
+    })
   }
 }
 

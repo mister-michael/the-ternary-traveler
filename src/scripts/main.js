@@ -7,6 +7,7 @@ import listenerEvents from "./eventListener.js"
 
 listenerEvents.submitButton();
 listenerEvents.editButton();
+listenerEvents.deleteButton();
 
 API.getPlaces().then(entries => renderDomComponent(entries));
 // }

@@ -3,7 +3,6 @@ const renderDomComponent = (entries) => {
 
   targetLocation.innerHTML = ""
   entries.forEach(entry => targetLocation.innerHTML += htmlFactory(entry))
-  
 }
 
 const htmlFactory = (entry) => {

@@ -1,8 +1,5 @@
 import API from "./api.js"
-import baseUrl from "./api.js"
-import expandedTrim from "./api.js"
 import renderDomComponent from "./domManager.js";
-
 
 const listenerEvents = {
   clearForm() {
@@ -28,6 +25,7 @@ const listenerEvents = {
     const targetSubmitButton = document.getElementById("submit--button");
 
     targetSubmitButton.addEventListener("click", () => {
+
       const targetNameInput = document.getElementById("poiName");
       const targetPlaceInput = document.getElementById("poiPlace");
       const targetDescriptionInput = document.getElementById("poiDescription");
@@ -41,6 +39,7 @@ const listenerEvents = {
       if (targetHiddenIdInput.value !== "") {
 
         poiCardAfterUpdate.id = parseInt(targetHiddenIdInput.value);
+
         const poiCardAfterUpdate = {
           "placeId": parseInt(targetPlaceInput.value),
           "name": targetNameInput.value,
@@ -48,6 +47,7 @@ const listenerEvents = {
           "cost": parseInt(targetCostInput.value),
           "review": targetReviewInput.value
         }
+
         API.updateEntry(poiCardAfterUpdate)
           .then(() => {
             API.getPlaces()
@@ -56,8 +56,8 @@ const listenerEvents = {
               .then(this.clearForm)
           })
 
-
       } else {
+
         const poiCardFirstEntry = {
           "placeId": parseInt(targetPlaceInput.value),
           "name": targetNameInput.value,
@@ -65,7 +65,6 @@ const listenerEvents = {
           "cost": parseInt(targetCostInput.value),
           "review": targetNoReview.value
         }
-
         API.saveEntry(poiCardFirstEntry)
           .then(() => API.getPlaces().then(renderDomComponent))
           .then(this.clearForm)
@@ -73,6 +72,7 @@ const listenerEvents = {
       }
     })
   },
+
   updateFormFields(entryId) {
     const targetNameInput = document.getElementById("poiName");
     const targetPlaceInput = document.getElementById("poiPlace");
@@ -93,19 +93,19 @@ const listenerEvents = {
 
     const targetReviewInput = document.getElementById("poiReview");
 
-    fetch(`http://localhost:8088/places/${entryId}?_embed=interests`)
+    fetch(`http://localhost:8088/interests/${entryId}?_expand=place`)
       .then(resp => resp.json())
       .then(entry => {
-        targetHiddenIdInput.value = entry.interests[0].placeId
-        targetNameInput.value = entry.interests[0].name
-        targetPlaceInput.value = entry.id
-        targetDescriptionInput.value = entry.interests[0].description
-        targetCostInput.value = entry.interests[0].cost
-        targetReviewInput.value = entry.interests[0].review
+        targetHiddenIdInput.value = entry.id
+        targetNameInput.value = entry.name
+        targetPlaceInput.value = entry.place.id
+        targetDescriptionInput.value = entry.description
+        targetCostInput.value = entry.cost
+        targetReviewInput.value = entry.review
 
       })
-
   },
+
   editButton() {
 
     const targetPrintLocation = document.querySelector("#printLocation");
@@ -120,22 +120,17 @@ const listenerEvents = {
       }
     })
   },
+
   deleteButton() {
     const targetPrintLocation = document.querySelector("#printLocation");
 
     targetPrintLocation.addEventListener("click", event => {
 
-
-
       if (event.target.id.startsWith("deleteButton--")) {
       
-        // window.confirm("are you sure?")
       const result = confirm("are you sure?")
 
       if (result) {
-
-
-        
 
         const entryToDelete = event.target.id.split("--")[1];
 
@@ -143,7 +138,6 @@ const listenerEvents = {
           .then(API.getPlaces)
           .then(renderDomComponent)
         }
-
       }
     })
   }

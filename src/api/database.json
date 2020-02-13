@@ -32,6 +32,14 @@
       "cost": 77,
       "review": "no review yet",
       "id": 6
+    },
+    {
+      "placeId": 1,
+      "name": "the pyramids",
+      "description": "they are these round marshmallow structures that egyptians used to party in",
+      "cost": 1,
+      "review": "no review yet",
+      "id": 7
     }
   ]
 }

@@ -1,0 +1,32 @@
+#printLocation {
+  display: flexbox;
+  margin: 4%;
+  /* padding: 10%; */
+}
+
+.displayCard {
+  display: flexbox;
+  margin: 3%;
+  padding: 10px;
+  border: solid 3px gray;
+  border-collapse: separate;
+  border-spacing: 7px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#descriptionDom {
+  font-size: 20px;
+  margin: 6px;
+}
+
+.buttonBox {
+  padding: 5px;
+}

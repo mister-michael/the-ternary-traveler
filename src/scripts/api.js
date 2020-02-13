@@ -5,11 +5,11 @@ const expandedTrim = "interests?_expand=place"
 
 const API = {
   getPlaces() {
-
+    
     return fetch(expandedUrl)
       .then(resp => resp.json())
-
   },
+
   saveEntry(entry) {
 
     return fetch(interestUrl, {
@@ -20,7 +20,9 @@ const API = {
       body: JSON.stringify(entry)
     })
   },
+
   updateEntry(entry) {
+
     return fetch(`${interestUrl}/${entry.id}`, {
       method: "PUT",
       headers: {
@@ -29,6 +31,7 @@ const API = {
       body: JSON.stringify(entry)
     })
   },
+
   deleteEntry(buttonId) {
     return fetch(`${interestUrl}/${buttonId}`, {
       method: "DELETE"

@@ -6,6 +6,7 @@ import listenerEvents from "./eventListener.js"
 // else {
 
 listenerEvents.submitButton();
+listenerEvents.editButton();
 
 API.getPlaces().then(entries => renderDomComponent(entries));
 // }

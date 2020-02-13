@@ -31,18 +31,22 @@
 
     <fieldset>
       <label id="descriptionInput" for="poiDescription">Tell Me About It:</label>
-      <input type="text" name="poiDescription" id="poiDescription" />
+      <textarea type="text" name="poiDescription" id="poiDescription"></textarea>
     </fieldset>
 
     <fieldset>
-      <label id="costInput" for="poiCost">Gimme Your Wallet:</label>
-      <input type="text" name="poiCost" id="poiCost" />
+      <label id="costInput" for="poiCost" >Gimme Your Wallet: $</label>
+      <input type="text" name="poiCost" id="poiCost" placeholder=""/>
     </fieldset>
     
-    <fieldset>
-      <label id="reviewInput" for="poiReview"></label>
-      <input type="hidden" name="poiReview" id="poiReview" />
-    </fieldset>
+    <input type="hidden" value="no review yet" id="noReview"/>
+    <section id="reviewDiv">
+      
+        <!-- <fieldset>
+            <label id="reviewInput" for="poiReview"></label>
+            <input type="hidden" name="poiReview" id="poiReview" placeholder="write a review"/>
+          </fieldset> -->
+        </section>
 
 
     <fieldset>

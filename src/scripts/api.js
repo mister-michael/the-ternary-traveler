@@ -1,5 +1,5 @@
 const baseUrl = "http://localhost:8088/"
-const placeUrl = "http://localhost:8088/interests"
+const interestUrl = "http://localhost:8088/interests"
 const expandedUrl = "http://localhost:8088/interests?_expand=place"
 const expandedTrim = "interests?_expand=place"
 
@@ -12,8 +12,17 @@ const API = {
   },
   saveEntry(entry) {
 
-    return fetch(placeUrl, {
+    return fetch(interestUrl, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(entry)
+    })
+  },
+  updateEntry(entry) {
+    return fetch(`${interestUrl}/${entry.id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },

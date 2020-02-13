@@ -22,15 +22,22 @@ const listenerEvents = {
         "name": targetNameInput.value,
         "description": targetDescriptionInput.value,
         "cost": parseInt(targetCostInput.value),
-        "review": targetReviewInput.value
+        
       }
 
       if (targetHiddenIdInput.value !== "") {
-        //post api
+        const targetReviewDiv = document.getElementById("reviewDiv")
+        poiCard.id = parseInt(targetHiddenIdInput.value);
+        API.updateEntry(poiCard)
+          .then(() => {
+            API.getPlaces()
+              .then(renderDomComponent)
+              .then(targetReviewDiv.innerHTML = "")
+          })
+
       } else {
 
         API.saveEntry(poiCard).then(() => API.getPlaces().then(renderDomComponent))
-
       }
     })
   },
@@ -41,21 +48,28 @@ const listenerEvents = {
     const targetCostInput = document.getElementById("poiCost");
     const targetReviewInput = document.getElementById("poiReview");
     const targetHiddenIdInput = document.getElementById("hiddenId")
-    
-    targetReviewInput.type = "text"
 
-    
+    const reviewHtml =
+      `<fieldset>
+          <label id="reviewInput" for="poiReview">Review: </label>
+          <input name="poiReview" id="poiReview" placeholder="write a review"/>
+        </fieldset>`
+
+    const targetReviewDiv = document.getElementById("reviewDiv")
+
+    targetReviewDiv.innerHTML += reviewHtml
+
+    // targetReviewInput.type = "text"
 
     fetch(`http://localhost:8088/places/${entryId}?_embed=interests`)
-    .then(resp => resp.json())
-    .then(entry => {
-      console.log(entry.interests[0].name)
-      targetHiddenIdInput.value = entry.interests[0].placeId
-      targetNameInput.value = entry.interests[0].name
-      targetPlaceInput.value = entry.id
-      targetDescriptionInput.value = entry.interests[0].description
-      targetCostInput.value = entry.interests[0].cost
-    })
+      .then(resp => resp.json())
+      .then(entry => {
+        targetHiddenIdInput.value = entry.interests[0].placeId
+        targetNameInput.value = entry.interests[0].name
+        targetPlaceInput.value = entry.id
+        targetDescriptionInput.value = entry.interests[0].description
+        targetCostInput.value = entry.interests[0].cost
+      })
   },
   editButton() {
 

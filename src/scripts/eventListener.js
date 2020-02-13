@@ -38,8 +38,6 @@ const listenerEvents = {
 
       if (targetHiddenIdInput.value !== "") {
 
-        poiCardAfterUpdate.id = parseInt(targetHiddenIdInput.value);
-
         const poiCardAfterUpdate = {
           "placeId": parseInt(targetPlaceInput.value),
           "name": targetNameInput.value,
@@ -47,6 +45,8 @@ const listenerEvents = {
           "cost": parseInt(targetCostInput.value),
           "review": targetReviewInput.value
         }
+
+        poiCardAfterUpdate.id = parseInt(targetHiddenIdInput.value);
 
         API.updateEntry(poiCardAfterUpdate)
           .then(() => {

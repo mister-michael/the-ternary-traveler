@@ -18,7 +18,7 @@
   ],
   "interests": [
     {
-      "placeId": 3,
+      "placeId": 2,
       "name": "Tapas Bar",
       "description": "there are tons of small plates with food and you dont feel like youre getting fat but you are and youre drunk with swiss hemingway",
       "cost": 432,
@@ -26,7 +26,7 @@
       "id": 5
     },
     {
-      "placeId": 2,
+      "placeId": 1,
       "name": "My cousin's cousin's son's graduation party",
       "description": "Dude it is to be the best grad party ever, so they say. They're gonna have tons of cool stuff like diplomas and gowns and books with a bunch of boring words in them.",
       "cost": 77,
@@ -36,7 +36,7 @@
     {
       "placeId": 1,
       "name": "the pyramids",
-      "description": "they are these round marshmallow structures that egyptians used to party in",
+      "description": "they are these round marshmallow structures that the pharao of  egypt gifted to france upon their glorious revolution. they're in italy, apparently. ",
       "cost": 1,
       "review": "no review yet",
       "id": 7

@@ -22,11 +22,40 @@
   font-style: italic;
 }
 
-#descriptionDom {
+/* #descriptionDom {
   font-size: 20px;
   margin: 6px;
-}
+} */
 
 .buttonBox {
   padding: 5px;
+}
+
+fieldset {
+  border-style: outset;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  margin: 2%;
+  padding: 5;
+  width: 90%;
+  /* display: flex; */
+  /* flex-basis: initial; */
+  /* -ms-flex-item-align: center; */
+
+}
+
+body {
+  background-color: #f1f1dca6;
+}
+
+article {
+  background-color: whitesmoke;
+}
+
+.footerDiv {
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  margin-top: 50px;
 }
